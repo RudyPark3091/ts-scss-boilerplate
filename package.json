@@ -1,0 +1,22 @@
+{
+  "name": "ts-scss-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+		"clear": "rm -rf dist",
+    "build:sass": "sass src/css:dist/css",
+    "start:sass": "sass --watch src/css:dist/css",
+    "build:typescript": "tsc",
+    "build": "npm run clear && npm run build:sass && npm run build:typescript",
+    "serve": "serve -s .",
+    "start:dev": "tsc --watch & npm run start:sass & npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.32.8",
+    "typescript": "^4.2.3"
+  }
+}
