@@ -1,0 +1,58 @@
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.spinners {
+	width: 100px;
+	height: 100px;
+	filter: url("#goo");
+	margin: 50px;
+
+	.spinner {
+		width: 80px;
+		height: 80px;
+		background-color: transparent;
+		position: absolute;
+		animation: rotate 4.2s linear infinite;
+
+		.spinner__tip {
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			background-color: #fff;
+			opacity: 0.1;
+		}
+
+		&:nth-child(1) {
+			.spinner__tip { width: 30px; height: 30px; background-color: #0984e3 }
+			animation: {
+				duration: 5s;
+			}
+		}
+		&:nth-child(2) {
+			.spinner__tip { width: 45px; height: 45px; background-color: #00cec9 }
+			animation: {
+				duration: 3.6s;
+			}
+		}
+		&:nth-child(3) {
+			.spinner__tip { width: 40px; height: 40px; background-color: #6c5ce7 }
+			animation: {
+				duration: 4s;
+			}
+		}
+	}
+}
+
+.container {
+	color: #aaa;
+
+	.red {
+		color: $f88;
+	}
+}
