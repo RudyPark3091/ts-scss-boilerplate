@@ -52,6 +52,15 @@
 .container {
 	color: #aaa;
 
+	.hello {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		font-size: 3rem;
+		font-weight: 900;
+	}
+
 	.red {
 		color: #f88;
 	}

@@ -1,17 +1,18 @@
+import { Component } from "./types/component";
 import $ from "./App.module.scss";
 
 type AppProps = {
-	parent: HTMLDivElement;
-	root?: HTMLDivElement;
+  parent: HTMLDivElement;
+  root?: HTMLDivElement;
 };
 
-export const App = (props: AppProps) => {
-	const container = document.createElement("div");
-	container.className = $.container;
-	container.innerHTML =
-		`edit <span class="${$.red}">src/App.ts</span> to make your own Application`;
+export const App: Component<AppProps> = (props: AppProps): HTMLElement => {
+  const container = document.createElement("div");
+  container.className = $.container;
+  container.innerHTML = `<div class="${$.hello}">Hello world!</div>
+edit <span class="${$.red}">src/App.ts</span> to build your own Application`;
 
-	const gooeyFilter = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+  const gooeyFilter = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
 	<defs>
 		<filter id="goo">
 			<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
@@ -24,33 +25,28 @@ export const App = (props: AppProps) => {
 			<feComposite in="SourceGraphic" in2="goo" />
 		</filter>
 	</defs>
-</svg>`
-	props.parent.innerHTML += gooeyFilter;
+</svg>`;
+  props.parent.innerHTML += gooeyFilter;
 
-	const spinners = document.createElement("div");
-	spinners.className = $.spinners;
+  const spinners = document.createElement("div");
+  spinners.className = $.spinners;
 
-	const spinner1 = document.createElement("div");
-	const spinner2 = document.createElement("div");
-	const spinner3 = document.createElement("div");
-	const spinner4 = document.createElement("div");
+  const spinner1 = document.createElement("div");
+  const spinner2 = document.createElement("div");
+  const spinner3 = document.createElement("div");
+  const spinner4 = document.createElement("div");
 
-	const tip = document.createElement("div");
-	tip.className = $.spinner__tip;
+  const tip = document.createElement("div");
+  tip.className = $.spinner__tip;
 
-	const spinnerElems = [
-		spinner1,
-		spinner2,
-		spinner3,
-		spinner4,
-	]
-	spinnerElems.forEach((elem) => {
-		elem.className = $.spinner
-		elem.appendChild(tip.cloneNode());
-		spinners.appendChild(elem);
-	});
+  const spinnerElems = [spinner1, spinner2, spinner3, spinner4];
+  spinnerElems.forEach((elem) => {
+    elem.className = $.spinner;
+    elem.appendChild(tip.cloneNode());
+    spinners.appendChild(elem);
+  });
 
-	props.parent.appendChild(spinners);
+  props.parent.appendChild(spinners);
 
-	return container;
-}
+  return container;
+};

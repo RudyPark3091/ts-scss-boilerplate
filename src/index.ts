@@ -8,22 +8,12 @@ style.innerText = `#app {
 	justify-content: center;
 	align-items: center;
 }
-
-.hello {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #fff;
-	font-size: 3rem;
-	font-weight: 900;
-}
 `;
 document.head.appendChild(style);
 
-const target = document.querySelector("#app")!;
-target.innerHTML += `<div class="hello">Hello world!</div>`;
-target.appendChild(
+const root = document.querySelector("#app")!;
+root.appendChild(
 	App({
-		parent: target as HTMLDivElement,
+		parent: root as HTMLDivElement,
 	})
 );

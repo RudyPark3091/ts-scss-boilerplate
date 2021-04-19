@@ -16,7 +16,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-		"clean": "rm -rf dist",
+		"clean": "rm -rf dist && mkdir dist",
 		"start": "npm run clean && cp index.html dist/ && webpack serve --open",
     "build": "webpack"
   }
